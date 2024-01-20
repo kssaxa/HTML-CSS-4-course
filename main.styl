@@ -1,0 +1,119 @@
+gap = 0.1vh
+
+name1()
+  background lightgray
+  display inline-block
+  width 100%
+  height 50px
+
+div.grid-container
+  display grid
+  width 100%
+  height 50%
+  margin auto
+  grid-template-rows 70px 50px 100px 100px
+  grid-template-columns repeat(6, 1fr)
+  & div
+    text-align center
+    font-weight bold
+  & div.main-name
+    grid-area 1/1/3/3
+    & div.blockname
+      padding 0.2%
+      font-size 1.8rem
+      width 30%
+      text-align center
+      margin 25px auto
+  & div.main-menu
+    grid-area 2/3/3/7
+    & div.grid-containerMenu
+      display grid
+      width 100%
+      margin auto
+      grid-template-columns repeat(4, 1fr)
+      & div.menu1
+        grid-area 1/1/2/2
+      & div.menu2
+        grid-area 1/2/2/3
+      & div.menu3
+        grid-area 1/3/2/4
+      & div.menu4
+        grid-area 1/4/2/5
+      & a
+        text-decoration none
+        color black
+  & div.main-img1
+    grid-area 3/1/5/4
+    grid-gap gap
+  & div.main-img2
+    grid-area 3/4/4/7
+    grid-gap gap
+  & div.main-img3
+    grid-area 4/4/5/7
+    grid-gap gap
+  & img
+    width 100%
+    height 100%
+
+div.content_text
+  display flex
+  flex-wrap wrap
+  width 100%
+  height auto
+  justify-content space-evenly
+  margin auto
+  padding 0.5%
+  align-content space-evenly
+  & div.text
+    width 31.25%
+    height auto
+    float left
+    margin 0.5%
+    padding 0.5%
+    overflow hidden
+    & div.imgt
+      height 55px
+      width 70px
+      margin auto
+      overflow hidden
+      & img
+        height inherit
+        width inherit
+  & h1
+    text-align center
+
+div.name
+  name1()
+  & .right
+    float right
+
+@media all and (max-width: 600px)
+  div.grid-container
+    grid-template-rows repeat(5, 100px)
+    grid-template-columns 1fr
+    & div.main-name
+      grid-area 1/1/2/2
+    & div.main-menu
+      grid-area 2/1/3/2
+      & div.grid-containerMenu
+        grid-template-rows repeat(2, 1fr)
+        grid-template-columns repeat(2, 1fr)
+        & div.menu1
+          grid-area 1/1/2/2
+        & div.menu2
+          grid-area 1/2/2/3
+        & div.menu3
+          grid-area 2/1/3/2
+        & div.menu4
+          grid-area 2/2/3/3
+    & div.main-img1
+      grid-area 3/1/4/2
+    & div.main-img2
+      grid-area 4/1/5/2
+    & div.main-img3
+      grid-area 5/1/6/2
+
+  div.content_text
+    flex-direction column
+    & div.text
+      width 100%
