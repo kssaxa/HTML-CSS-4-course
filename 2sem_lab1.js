@@ -1,5 +1,5 @@
 function Serch(str){
-    let pos;
+    let pos = 0;
     let newStr = '';
     let longStr = '';
     str = str + ' ';
@@ -9,20 +9,21 @@ function Serch(str){
         let oldPos = pos; //начало очередного слова
         pos = str.indexOf(' ', pos) + 1; //конец очередного слова 
         word = str.slice(oldPos, pos);
-        if (word.lenght > maxLengt){
-            longStr = word;
-            maxLengt = word.lenght
-        }
-         if(word.lenght === maxLengt){
-            longStr = longStr +  word;
-         }
-         
-         
-    } 
+        if  (isNaN(parseFloat(word)) || !isFinite(word)) {
+            if(word.length === maxLengt){
+                longStr = longStr +  word;
+            } 
+
+            if (word.length > maxLengt){
+                longStr = word;
+                maxLengt = word.length;
+            } 
+        } 
+}
     
-    return longStr;
+   return longStr;
     
 }
 
-str = 'fff pppp rrrrr yy ttttt ';
+str = 'fff ttttt pppp  55555 rrrrr yy aaaaa ';
  document.write(Serch(str));
