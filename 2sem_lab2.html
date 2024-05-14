@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>
+    </title>
+
+</head>
+<body>
+
+<h3>Языки программиррования</h3>
+<div class="test">Python</div>
+<div>C</div>
+<div><a href="#">Java</a></div>
+<h3 class="bold big">История создания</h3>
+<div class="bold test">
+    <div>Python создан в 1989–1991.</div>
+    <div>C  разработан в 1969–1973 годах.</div>
+    <div>Java  разработан в 1990–1996 годах.</div>
+    <div>JavaScript  разработан в 1996 году.</div>
+    <div>Prolog  разработан в 1972 году.</div>
+</div>
+<h3>Разработчики</h3>
+<ol class="test">
+    <li>Брендан Айк</li>
+</ol>
+<input type = "button" value = "Преобразовать"  onClick="changePage('test')">
+<script>
+
+    function changePage(className) {
+
+        let elem = document.getElementsByClassName(className);
+
+        for (let element of elem) {
+            if (element.children.length === 0) {
+                while(element.children.length != 3){
+                    let newDiv = document.createElement('div');
+                    newDiv.textContent = "Новый элемент";
+                    element.appendChild(newDiv);
+                }
+            }
+            if (element.children.length < 3) {
+                while (element.children.length < 3) {
+                    // Создаем нового ребенка, копируя первого ребенка
+                    let newChild = element.firstElementChild.cloneNode(true);
+                    element.appendChild(newChild);
+                }
+            }
+            if (element.children.length > 3) {
+                while (element.children.length > 3) {
+                    element.removeChild(element.lastElementChild);
+                }
+            }
+
+        }
+    }
+
+</script>
+</body>
+</html>
