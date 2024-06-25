@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<details>
+    <summary>Фильтр</summary>
+    <form id="filter">
+        <p>
+            <label for="Name">Название: </label>
+            <input type="text" id="Name"><br>
+            <label for="Region">Субъект федерации: </label>
+            <input type="text" id="Region"><br>
+            <label for="Deals">Количество сделок: </label>
+            <input type="text" id="Deals"><br>
+            <label for="Ads">Количество объявлений: </label>
+            <input type="text" id="Ads"><br>
+            <label for="RatingFrom">Оценка клиентов от: </label>
+            <input type="number" min="0" max="5" step="0.1" id="RatingFrom">
+            <label for="RatingTo">Рейтинг до: </label>
+            <input type="number" min="0" max="5" step="0.1" id="RatingTo"><br>
+        </p>
+        <p>
+            <input type="button" value="Найти" id="search">
+            <input type="button" value="Очистить форму" id="clear">
+        </p>
+    </form>
+</details>
+
+<details>
+    <summary>Сортировка</summary>
+    <form id="sortForm">
+        <p>Первый уровень:
+            <select id="sortLevel1">
+                <option value="0">Название</option>
+                <option value="1">Субъект федерации</option>
+                <option value="2">Количество сделок</option>
+                <option value="3">Количество объявлений</option>
+                <option value="4">Оценка клиентов</option>
+            </select>
+            <select id="orderLevel1">
+                <option value="asc">По возрастанию</option>
+                <option value="desc">По убыванию</option>
+            </select>
+        </p>
+        <p>Второй уровень:
+            <select id="sortLevel2">
+                <option value="0">Название</option>
+                <option value="1">Субъект федерации</option>
+                <option value="2">Количество сделок</option>
+                <option value="3">Количество объявлений</option>
+                <option value="4">Оценка клиентов</option>
+            </select>
+            <select id="orderLevel2">
+                <option value="asc">По возрастанию</option>
+                <option value="desc">По убыванию</option>
+            </select>
+        </p>
+        <p>Третий уровень:
+            <select id="sortLevel3">
+                <option value="0">Название</option>
+                <option value="1">Субъект федерации</option>
+                <option value="2">Количество сделок</option>
+                <option value="3">Количество объявлений</option>
+                <option value="4">Оценка клиентов</option>
+            </select>
+            <select id="orderLevel3">
+                <option value="asc">По возрастанию</option>
+                <option value="desc">По убыванию</option>
+            </select>
+        </p>
+        <p>
+            <input type="button" value="Сортировать" id="buttonSort">
+            <input type="button" value="Сбросить" id="buttonClear">
+        </p>
+    </form>
+</details>
+
+<table id='list' border="3" align="center" valign="top" bgcolor="#FFFFFF">
+
+    <tbody>
+    </tbody>
+</table>
+
+<script type="text/javascript" src="pr.js"></script>
+<script type="text/javascript" src="data.js"></script>
+</body>
+</html>

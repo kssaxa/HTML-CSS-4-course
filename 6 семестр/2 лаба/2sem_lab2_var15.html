@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="2sem_lab2_var15.css">
+    </head>
+
+    <body>
+        <div class = "task">
+            <img src="pict_1.png" id="image">
+            <div class="input">
+                <form>
+                    <div id = radioInput>
+                    <!--Входные данные:<br>
+                        <input  type="radio"  name="math" id="Hypotenuse" value="Hypotenuse" checked>
+                        <label for="Hypotenuse">Гипотенуза и угол</label><br>
+                        <input  type="radio"  name="math" id="leg" value="leg">
+                        <label for="leg">Два катета</label><br><br>-->
+                        <input type="radio" id="hypotenuseAngle" name="inputType" value="hypotenuseAngle" checked>
+                        <label for="hypotenuseAngle">Гипотенуза и угол</label><br>
+                        <input type="radio" id="legs" name="inputType" value="legs">
+                        <label for="legs">Два катета</label><br><br>
+                    </div>
+                    <div id = labelInput>
+                        <label for="input1">Гипотенуза (c):</label>
+                        <input type="number" id="input1" name="input1"><br>
+                        <label for="input2">Угол (α):</label>
+                        <input type="number" id="input2" name="input2"><br><br>
+                    </div>
+                    <p>
+                        <label for="out">Вычисляемые характеристики:</label><br>
+                          <select id="out" name="out" multiple size="4" required>
+                             <option value="median" id="task1">Медианы</option>
+                             <option value="height" id="task2">Высота</option>
+                             <option value="Radius" id="task3">Радиус описанной окружности</option>
+                             <option value="area" id="task4">Площадь</option>
+                         </select><br><br>
+                        <!--   Вычисляемые характеристики:</br>
+                              <label><input type="checkbox" id = "task1">Медиана</label></br>
+                              <label><input type="checkbox" id = "task2">Высота</label></br>
+                              <label><input type="checkbox" id = "task3">Радиус описанной окружности</label></br>
+                              <label><input type="checkbox" id = "task4">Площадь</label></br>
+                        -->
+                      </p>
+                      <p>
+
+                          <input type="button" value="Вычислить"  onClick="calculate(this.form)">
+                          <input type="reset" value="Очистить">
+                      </p>
+                  </form>
+              </div>
+              <div id = "output">
+              </div>
+          </div>
+          <script type="text/javascript" src="2sem_lab2_var15.js"></script>
+      </body>
+  </html>

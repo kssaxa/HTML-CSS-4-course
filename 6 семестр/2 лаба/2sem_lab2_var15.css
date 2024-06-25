@@ -1,0 +1,22 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.task {
+    width: 50%;
+
+
+}
+
+input.error {
+    border: 2px solid red;
+}
+
+button {
+    margin: 10px;
+}
+
+#output p {
+    margin-top: 10px;
+}
