@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://d3js.org/d3.v7.min.js"></script>
+    <title>Анализ Агенств</title>
+</head>
+<body>
+<details>
+    <summary>График</summary>
+    <form id="graph_form">
+        <p>Значение по оси OX</p>
+        <input type="radio" name="ox" value="Субъект федерации" id="agencyRegion"> Регион<br>
+        <input type="radio" name="ox" value="Агенство" id="agencyName"> Агенство<br>
+        <p>Значение по оси OY</p>
+        <input type="checkbox" name="oy" id="minDeals" value="Количество сделок" onclick="changeState(this.form, value)"> Минимальное количество сделок<br>
+        <input type="checkbox" name="oy" id="maxDeals" value="Количество сделок" onclick="changeState(this.form, value)"> Максимальное количество сделок<br>
+        <input type="checkbox" name="oy" id="minListings" value="Количество объявлений" onclick="changeState(this.form, value)">Минимальное количество объявлений<br>
+        <input type="checkbox" name="oy" id="maxListings" value="Количество объявлений" onclick="changeState(this.form, value)">Максимальное количество объявлений<br>
+        <input type="checkbox" name="oy" id="minRating" value="Оценка клиентов" onclick="changeState(this.form, value)">Минимальная оценка клиентов<br>
+        <input type="checkbox" name="oy" id="maxRating" value="Оценка клиентов" onclick="changeState(this.form, value)">Максимальная оценка клиентов<br>
+        <p>
+            <input type="button" value="Построить" onclick="drawGraph(this.form)">
+        </p>
+    </form>
+    <svg height="600" width="1000"></svg>
+</details>
+<table id='list' border="3" align="center" valign="top" bgcolor="#FFFFFF">
+    <tbody>
+    </tbody>
+</table>
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="2sem_lab5.js"></script>
+</body>
+</html>
