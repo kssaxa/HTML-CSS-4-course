@@ -1,6 +1,6 @@
 let displayTable = (data, idTable) => {
     let table = document.getElementById(idTable).getElementsByTagName('tbody')[0];
-    table.innerHTML = ""; // Clear existing table data
+    table.innerHTML = ""; // Очистить существующие данные таблицы
 
     let tr = document.createElement('tr');
     for (let key in data[0]) {
@@ -28,9 +28,9 @@ document.addEventListener("DOMContentLoaded", function() {
 function What_is(data) {
     for (let i = 0; i < data.oy.length; i++) {
         if (data.oy[i].checked) {
-            if (i <= 1) return 0; // Deals
-            if (i <= 3) return 1; // Listings
-            if (i <= 5) return 2; // Rating
+            if (i <= 1) return 0; // Сделки
+            if (i <= 3) return 1; // Объявления
+            if (i <= 5) return 2; // Оценка
         }
     }
 }
@@ -65,10 +65,10 @@ function drawGraph(data) {
     const [scX, scY] = createAxis(arrGraph, isMin, isMax);
 
     if (isMax) {
-        createChart(arrGraph, scX, scY, 1, "lightgreen");
+        createChart(arrGraph, scX, scY, 1, "orange", 0.2);
     }
     if (isMin) {
-        createChart(arrGraph, scX, scY, 0, "lightblue");
+        createChart(arrGraph, scX, scY, 0, "lightpink", -0.2);
     }
 }
 
@@ -108,11 +108,12 @@ function createAxis(data, isFirst, isSecond) {
     return [scaleX, scaleY];
 }
 
-function createChart(data, scaleX, scaleY, index, color) {
-    svg.selectAll(".bar").data(data).enter().append("rect").attr("class", "bar")
-        .attr("x", d => scaleX(d.labelX))
+function createChart(data, scaleX, scaleY, index, color, offset) {
+    const barWidth = scaleX.bandwidth() / 2;
+    svg.selectAll(".bar" + index).data(data).enter().append("rect").attr("class", "bar" + index)
+        .attr("x", d => scaleX(d.labelX) + (offset * barWidth) + barWidth / 4)
         .attr("y", d => scaleY(d.values[index]) + marginY)
-        .attr("width", scaleX.bandwidth())
+        .attr("width", barWidth)
         .attr("height", d => height - scaleY(d.values[index]) - 2 * marginY)
         .attr("transform", `translate(${marginX}, 0)`)
         .style("fill", color);
