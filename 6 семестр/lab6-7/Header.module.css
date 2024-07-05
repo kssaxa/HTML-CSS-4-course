@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+.menuButton {
+    margin: 0 15px;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.menuButton a {
+    color: white;
+    text-decoration: none;
+}
+
+.menuButton:hover {
+    background-color: #444;
+}
