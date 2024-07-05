@@ -1,6 +1,6 @@
 let displayTable = (data, idTable) => {
     let table = document.getElementById(idTable).getElementsByTagName('tbody')[0];
-    table.innerHTML = ""; // Очистить существующие данные таблицы
+    table.innerHTML = "";
 
     let tr = document.createElement('tr');
     for (let key in data[0]) {
@@ -28,9 +28,9 @@ document.addEventListener("DOMContentLoaded", function() {
 function What_is(data) {
     for (let i = 0; i < data.oy.length; i++) {
         if (data.oy[i].checked) {
-            if (i <= 1) return 0; // Сделки
-            if (i <= 3) return 1; // Объявления
-            if (i <= 5) return 2; // Оценка
+            if (i <= 1) return 0;
+            if (i <= 3) return 1;
+            if (i <= 5) return 2;
         }
     }
 }
